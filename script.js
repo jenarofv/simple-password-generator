@@ -35,6 +35,10 @@ const copyOnclick = (text) => {
 }
 
 function printPasswords(event) {
+  if (!numOfPasswords.checkValidity()) {
+    window.alert("number of passwords out of range");
+    return ;
+  }
   totalPasswords = numOfPasswords.value;
   length = lengthSetter.value;
   for (let i = 0; i < totalPasswords; i++) {
