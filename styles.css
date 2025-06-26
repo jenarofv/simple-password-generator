@@ -27,6 +27,7 @@ main > div {
   border: solid 1pt black;
   padding: 0.5rem;
   border-radius: 0.3rem;
+  text-align: center;
 }
 
 .password:hover {
