@@ -14,9 +14,13 @@ main {
   gap: 2rem;
 }
 
-main div {
+main > div {
   display: flex;
   flex-direction: column;
+}
+
+.flexrow {
+  flex-direction: row;
 }
 
 .password {
