@@ -29,6 +29,11 @@ const removePasswords = () => {
   result.innerHTML = "";
 }
 
+const copyOnclick = (text) => {
+  navigator.clipboard.writeText(text);
+  window.alert("copied password to clipboard");
+}
+
 function printPasswords(event) {
   totalPasswords = numOfPasswords.value;
   length = lengthSetter.value;
@@ -36,6 +41,10 @@ function printPasswords(event) {
     currentPassword = document.createElement("p");
     currentPassword.classList.add("password");
     currentPassword.textContent = generatePassword(length);
+    currentPassword.addEventListener("click", (event) => {
+      console.log(event.target.textContent);
+      copyOnclick(event.target.textContent);
+    });
     result.appendChild(currentPassword);
   }
 }

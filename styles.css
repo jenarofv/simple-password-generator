@@ -18,3 +18,14 @@ main div {
   display: flex;
   flex-direction: column;
 }
+
+.password {
+  border: solid 1pt black;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.password:hover {
+  background: lightgrey;
+  cursor: copy;
+}
