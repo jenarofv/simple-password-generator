@@ -5,6 +5,7 @@ const numOfPasswords = document.getElementById("numOfPasswords");
 const result = document.getElementById("result");
 const create = document.getElementById("create");
 const useSymbols = document.getElementById("symbols");
+const useNumbers = document.getElementById("numbers");
 
 // update password length by moving slider(range)
 passwordLengthOut.textContent = lengthSetter.value;
@@ -15,16 +16,18 @@ lengthSetter.addEventListener("input", (event) => {
 // characters allowed in passwords. Yes, we use the eñe.
 const letters = "abcdefghijklmnñoprqstuvwxyzABCDEFGHIJKLMNÑOPRQSTUVWXYZ";
 const symbols = "!@#$%&*()_+=-[]{};:'.,<>\"";
+const numbers = "0123456789";
 
 const generatePassword = (length) => {
-  let characters;
+  let characters = letters;
   if (useSymbols.checked) {
-    characters = letters + symbols;
-  } else {
-    characters = letters;
+    characters += symbols;
+  }
+  if (useNumbers.checked) {
+    characters += numbers;
   }
   const numOfCharacters = characters.length;
-  password= "";
+  let password= "";
   for (let i = 0; i < length; i++) {
     password += characters[Math.floor(Math.random() * numOfCharacters)];
   }
